@@ -1,0 +1,11 @@
+@import configuration.AppConfiguration
+@(config: AppConfiguration)
+
+
+@main("Auth0 Play2 Scala Sample","home") {
+
+  @config.clientId()
+  @config.domain()
+  @config.callbackURL()
+
+}
