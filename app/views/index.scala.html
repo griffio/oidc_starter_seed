@@ -1,11 +1,14 @@
 @import configuration.AppConfiguration
 @(config: AppConfiguration)
 
-
-@main("Auth0 Play2 Scala Sample","home") {
-
-  @config.clientId()
-  @config.domain()
-  @config.callbackURL()
-
+@main("Auth0 Play2 Scala Sample", "home") {
+  <form action="https://@config.domain()/authorize" method="get" enctype="application/x-www-form-urlencoded">
+    <div class="form-group">
+      <label>Client ID</label><input class="form-control" type="text" name="client_id" value="@config.clientId()" maxlength="100" title="">
+      <label>Response Type</label><input class="form-control" type="text" name="response_type" value="code" maxlength="100" title="">
+      <label>Scope</label><input class="form-control" type="text" name="scope" value="openid profile email" maxlength="100" title="">
+      <label>Redirect URI</label><input class="form-control" type="text" name="redirect_uri" value="@config.callbackURL()" maxlength="100" title="">
+      <button type="submit" class="btn btn-default">Sign-On</button>
+    </div>
+  </form>
 }
