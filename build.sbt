@@ -1,4 +1,6 @@
-name := """regular-webapp"""
+enablePlugins(PlayScala)
+
+name := "play-webapp"
 
 version := "1.0-SNAPSHOT"
 
@@ -11,5 +13,3 @@ libraryDependencies ++= Seq(
   cache,
   ws
 )
-
-fork in run := true
