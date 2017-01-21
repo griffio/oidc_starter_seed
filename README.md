@@ -4,18 +4,19 @@ This is the seed project you need to use if you're going to create regular Webap
 Removed deprecated features warning of PlayFramework
 
 #Running the example
-In order to run the example you need to have `play` and `activator` installed.
 
-You also need to set the ClientSecret, ClientId, CallbackURL and Domain in the `application.conf`. Just look for the placeholders and fill them with the right information
+```
+sbt run
+```
+
+You also need to set the ClientSecret, ClientId, CallbackURL and Domain in the `application.conf`. Just look for the placeholders and fill them with the specific information.
 
 
-```` OIDC properties
-# ~~~~~~~~~~~~~~~~~
-
+```
 oidc.clientSecret="YOUR_CLIENT_SECRET"
 oidc.clientId="YOUR_CLIENT_ID"
 oidc.domain="YOUR_DOMAIN"
 oidc.callbackURL="http://localhost:9000/callback"
-````
+```
 
-Finally, run `activator run` to start the app and try calling [http://localhost:9000/](http://localhost:9000/)
+Call App to compile [http://localhost:9000/](http://localhost:9000/)
