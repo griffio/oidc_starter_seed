@@ -1,7 +1,6 @@
 # Play 2.5 Scala Regular WebApp Seed
-This is the seed project you need to use if you're going to create regular Webapp with Scala and Play2. If you want to create a Play Scala API
 
-Removed deprecated features warning of PlayFramework
+OpenID Connect authentication form to call /authorise with a code grant flow and callback 
 
 #Running the example
 
