@@ -2,23 +2,18 @@ import org.junit.runner._
 import org.specs2.runner._
 import play.api.test.{FakeRequest, PlaySpecification, WithApplication}
 
-/**
-  * play.api.test.WithApplication}
-  */
 @RunWith(classOf[JUnitRunner])
 class ApplicationSpec extends PlaySpecification {
 
   "Application" should {
 
-    "send 404 on a bad request" in new WithApplication {
-      route(app, FakeRequest(GET, "/boum")) must beNone
-    }
+    "handle routes" in new WithApplication {
+      val Some(bogus) = route(app, FakeRequest(GET, "/bogus"))
+      status(bogus) must equalTo(NOT_FOUND)
 
-    "render the index page" in new WithApplication {
-      val home = route(app, FakeRequest(GET, "/")).get
-
-      status(home) must equalTo(OK)
-      contentType(home) must beSome.which(_ == "text/html")
+      val Some(index) = route(app, FakeRequest(GET, "/"))
+      status(index) must equalTo(OK)
+      contentType(index) must beSome.which(_ == "text/html")
     }
   }
 }
